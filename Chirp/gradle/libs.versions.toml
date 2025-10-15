@@ -171,6 +171,7 @@ convention-kmp-library = {id = "com.grpitsolutions.convention.kmp.library", vers
 convention-cmp-library = {id = "com.grpitsolutions.convention.cmp.library", version = "unspecified"}
 convention-cmp-feature = {id = "com.grpitsolutions.convention.cmp.feature", version = "unspecified"}
 convention-buildkonfig = {id = "com.grpitsolutions.convention.buildkonfig", version = "unspecified"}
+convention-room = {id = "com.grpitsolutions.convention.room", version = "unspecified"}
 
 # Android
 android-application = { id = "com.android.application", version.ref = "agp" }
