@@ -1,0 +1,8 @@
+{
+  "buildPath": ":",
+  "projectPath": ":core:designsystem",
+  "moduleId": {
+    "groupId": "Chirp.core",
+    "moduleId": "designsystem"
+  }
+}

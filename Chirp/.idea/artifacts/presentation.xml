@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="presentation">
+    <output-path>$PROJECT_DIR$/feature/chat/presentation/build/libs</output-path>
+    <root id="archive" name="presentation.jar">
+      <element id="module-output" name="Chirp.feature.chat.presentation.androidMain" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,8 @@
+{
+  "buildPath": ":",
+  "projectPath": ":core:presentation",
+  "moduleId": {
+    "groupId": "Chirp.core",
+    "moduleId": "presentation"
+  }
+}
