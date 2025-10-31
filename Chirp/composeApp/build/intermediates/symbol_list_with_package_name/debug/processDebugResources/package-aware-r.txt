@@ -77,6 +77,7 @@ attr allowStacking
 attr alpha
 attr alphabeticModifiers
 attr alwaysExpand
+attr animationBackgroundColor
 attr argType
 attr arrowHeadLength
 attr arrowShaftLength
@@ -150,6 +151,8 @@ attr divider
 attr dividerHorizontal
 attr dividerPadding
 attr dividerVertical
+attr dragRangeMaxRatio
+attr dragRangeMinRatio
 attr drawableBottomCompat
 attr drawableEndCompat
 attr drawableLeftCompat
@@ -166,10 +169,14 @@ attr editTextBackground
 attr editTextColor
 attr editTextStyle
 attr elevation
+attr embeddingDividerColor
+attr embeddingDividerType
+attr embeddingDividerWidthDp
 attr emojiCompatEnabled
 attr enterAnim
 attr exitAnim
 attr expandActivityOverflowButtonDrawable
+attr finishPrimaryWithPlaceholder
 attr finishPrimaryWithSecondary
 attr finishSecondaryWithPrimary
 attr firstBaselineToTopHeight
@@ -284,13 +291,17 @@ attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
 attr splitLayoutDirection
-attr splitMinSmallestWidth
-attr splitMinWidth
+attr splitMaxAspectRatioInLandscape
+attr splitMaxAspectRatioInPortrait
+attr splitMinHeightDp
+attr splitMinSmallestWidthDp
+attr splitMinWidthDp
 attr splitRatio
 attr splitTrack
 attr srcCompat
 attr startDestination
 attr state_above_anchor
+attr stickyPlaceholder
 attr subMenuArrow
 attr submitBackground
 attr subtitle
@@ -302,6 +313,7 @@ attr switchMinWidth
 attr switchPadding
 attr switchStyle
 attr switchTextAppearance
+attr tag
 attr targetPackage
 attr textAllCaps
 attr textAppearanceLargePopupMenu
@@ -741,14 +753,18 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id adjacent
 id alertTitle
 id always
+id alwaysAllow
+id alwaysDisallow
 id androidx_compose_ui_view_composition_context
 id androidx_window_activity_scope
 id async
 id beginning
 id blocking
 id bottom
+id bottomToTop
 id buttonPanel
 id center_vertical
 id checkbox
@@ -766,11 +782,13 @@ id decor_content_parent
 id default_activity_button
 id dialog_button
 id disableHome
+id draggable
 id edit_query
 id edit_text_id
 id end
 id expand_activities_button
 id expanded_menu
+id fixed
 id forever
 id fragment_container_view_tag
 id ghost_view
@@ -873,6 +891,7 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id topToBottom
 id transition_current_scene
 id transition_layout_save
 id transition_position
@@ -1427,7 +1446,7 @@ styleable ActionMode background backgroundSplit closeItemLayout height subtitleT
 styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivityCount
 styleable ActivityFilter activityAction activityName
 styleable ActivityNavigator android_name action data dataPattern targetPackage
-styleable ActivityRule alwaysExpand
+styleable ActivityRule alwaysExpand tag
 styleable AlertDialog android_layout buttonIconDimen buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout
 styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable AnimatedStateListDrawableItem android_id android_drawable
@@ -1444,6 +1463,7 @@ styleable CheckedTextView android_checkMark checkMarkCompat checkMarkTint checkM
 styleable ColorStateListItem android_color android_alpha android_lStar alpha lStar
 styleable CompoundButton android_button buttonCompat buttonTint buttonTintMode
 styleable DialogFragmentNavigator android_name
+styleable DividerAttributes dragRangeMaxRatio dragRangeMinRatio embeddingDividerColor embeddingDividerType embeddingDividerWidthDp
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFallbackQuery fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery fontProviderSystemFontFamily
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
@@ -1472,8 +1492,8 @@ styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable SplitPairFilter primaryActivityName secondaryActivityAction secondaryActivityName
-styleable SplitPairRule clearTop finishPrimaryWithSecondary finishSecondaryWithPrimary splitLayoutDirection splitMinSmallestWidth splitMinWidth splitRatio
-styleable SplitPlaceholderRule placeholderActivityName splitLayoutDirection splitMinSmallestWidth splitMinWidth splitRatio
+styleable SplitPairRule animationBackgroundColor clearTop finishPrimaryWithSecondary finishSecondaryWithPrimary splitLayoutDirection splitMaxAspectRatioInLandscape splitMaxAspectRatioInPortrait splitMinHeightDp splitMinSmallestWidthDp splitMinWidthDp splitRatio tag
+styleable SplitPlaceholderRule animationBackgroundColor finishPrimaryWithPlaceholder placeholderActivityName splitLayoutDirection splitMaxAspectRatioInLandscape splitMaxAspectRatioInPortrait splitMinHeightDp splitMinSmallestWidthDp splitMinWidthDp splitRatio stickyPlaceholder tag
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode

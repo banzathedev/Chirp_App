@@ -68,7 +68,8 @@
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
           "Chirp.core:domain",
-          "org.jetbrains.compose.components:components-resources"
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.material3.adaptive:adaptive"
         ],
         "sourceSetCInteropMetadataDirectory": "appleMain-cinterop",
         "binaryLayout": "klib",
@@ -85,7 +86,8 @@
           "org.jetbrains.compose.material:material-icons-core",
           "org.jetbrains.kotlin:kotlin-stdlib",
           "Chirp.core:domain",
-          "org.jetbrains.compose.components:components-resources"
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.material3.adaptive:adaptive"
         ],
         "binaryLayout": "klib"
       },
@@ -101,7 +103,8 @@
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
           "Chirp.core:domain",
-          "org.jetbrains.compose.components:components-resources"
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.material3.adaptive:adaptive"
         ],
         "sourceSetCInteropMetadataDirectory": "iosMain-cinterop",
         "binaryLayout": "klib",
@@ -119,7 +122,8 @@
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
           "Chirp.core:domain",
-          "org.jetbrains.compose.components:components-resources"
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.material3.adaptive:adaptive"
         ],
         "sourceSetCInteropMetadataDirectory": "nativeMain-cinterop",
         "binaryLayout": "klib",

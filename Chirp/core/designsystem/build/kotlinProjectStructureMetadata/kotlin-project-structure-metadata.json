@@ -67,7 +67,8 @@
           "org.jetbrains.compose.foundation:foundation",
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
-          "org.jetbrains.compose.components:components-resources"
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
         "sourceSetCInteropMetadataDirectory": "appleMain-cinterop",
         "binaryLayout": "klib",
@@ -83,7 +84,8 @@
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
           "org.jetbrains.kotlin:kotlin-stdlib",
-          "org.jetbrains.compose.components:components-resources"
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
         "binaryLayout": "klib"
       },
@@ -98,7 +100,8 @@
           "org.jetbrains.compose.foundation:foundation",
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
-          "org.jetbrains.compose.components:components-resources"
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
         "sourceSetCInteropMetadataDirectory": "iosMain-cinterop",
         "binaryLayout": "klib",
@@ -115,7 +118,8 @@
           "org.jetbrains.compose.foundation:foundation",
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
-          "org.jetbrains.compose.components:components-resources"
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
         "sourceSetCInteropMetadataDirectory": "nativeMain-cinterop",
         "binaryLayout": "klib",
