@@ -4,8 +4,11 @@ import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -25,7 +28,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun ChirpSurface(
     modifier: Modifier = Modifier,
     header: @Composable ColumnScope.() -> Unit = {},
-    content: @Composable ColumnScope.() -> Unit,
+    content: @Composable ColumnScope.() -> Unit
 ) {
     Surface(
         color = MaterialTheme.colorScheme.background,
@@ -33,24 +36,29 @@ fun ChirpSurface(
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
         ) {
             header()
             Surface(
                 color = MaterialTheme.colorScheme.surface,
                 modifier = Modifier
                     .weight(1f)
-                    .fillMaxSize(),
+                    .fillMaxWidth(),
                 shape = RoundedCornerShape(
                     topStart = 20.dp,
                     topEnd = 20.dp
                 )
             ) {
                 Column(
-                    modifier = Modifier.fillMaxSize()
-                ) { content() }
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(horizontal = 16.dp)
+                        .verticalScroll(rememberScrollState())
+                ) {
+                    content()
+                }
             }
-
         }
     }
 }
@@ -60,25 +68,26 @@ fun ChirpSurface(
 fun ChirpSurfacePreview() {
     ChirpTheme {
         ChirpSurface(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize(),
             header = {
                 Icon(
                     imageVector = vectorResource(Res.drawable.logo_chirp),
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(vertical = 32.dp)
+                    modifier = Modifier
+                        .padding(vertical = 32.dp)
                 )
             },
             content = {
                 Text(
-                    text = "Welcome to chirp",
+                    text = "Welcome to Chirp!",
                     style = MaterialTheme.typography.titleLarge,
                     modifier = Modifier
                         .padding(vertical = 40.dp)
                         .align(Alignment.CenterHorizontally)
                 )
             }
-
         )
     }
 }
