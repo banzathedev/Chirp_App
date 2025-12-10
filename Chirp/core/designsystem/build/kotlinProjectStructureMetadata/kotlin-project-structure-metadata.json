@@ -67,6 +67,7 @@
           "org.jetbrains.compose.foundation:foundation",
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
+          "Chirp.core:presentation",
           "org.jetbrains.compose.components:components-resources",
           "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
@@ -84,6 +85,7 @@
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
           "org.jetbrains.kotlin:kotlin-stdlib",
+          "Chirp.core:presentation",
           "org.jetbrains.compose.components:components-resources",
           "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
@@ -100,6 +102,7 @@
           "org.jetbrains.compose.foundation:foundation",
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
+          "Chirp.core:presentation",
           "org.jetbrains.compose.components:components-resources",
           "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
@@ -118,6 +121,7 @@
           "org.jetbrains.compose.foundation:foundation",
           "org.jetbrains.compose.material3:material3",
           "org.jetbrains.compose.material:material-icons-core",
+          "Chirp.core:presentation",
           "org.jetbrains.compose.components:components-resources",
           "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
