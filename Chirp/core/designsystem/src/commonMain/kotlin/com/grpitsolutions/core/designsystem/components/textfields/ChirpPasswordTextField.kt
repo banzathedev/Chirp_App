@@ -26,6 +26,8 @@ import androidx.compose.ui.unit.dp
 import chirp.core.designsystem.generated.resources.Res
 import chirp.core.designsystem.generated.resources.eye_icon
 import chirp.core.designsystem.generated.resources.eye_off_icon
+import chirp.core.designsystem.generated.resources.hide_password
+import chirp.core.designsystem.generated.resources.show_password
 import com.grpitsolutions.core.designsystem.theme.ChirpTheme
 import com.grpitsolutions.core.designsystem.theme.extended
 import org.jetbrains.compose.resources.stringResource
@@ -111,7 +113,11 @@ fun ChirpPasswordTextField(
                                 ),
                                 onClick = onToggleVisibilityClick
                             ),
-                        contentDescription = null
+                        contentDescription = if (isPasswordVisible){
+                            stringResource(Res.string.hide_password)
+                        } else {
+                            stringResource(Res.string.show_password)
+                        }
                     )
                 }
             }
