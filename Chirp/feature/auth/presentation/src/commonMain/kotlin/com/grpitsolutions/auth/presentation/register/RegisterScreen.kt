@@ -37,7 +37,7 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun RegisterRoot(
-    viewModel: RegisterViewModel = koinViewModel()
+    viewModel: RegisterViewModel = viewModel()
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
