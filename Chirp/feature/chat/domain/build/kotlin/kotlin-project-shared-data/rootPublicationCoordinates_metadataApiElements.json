@@ -1,8 +1,0 @@
-{
-  "buildPath": ":",
-  "projectPath": ":feature:chat:domain",
-  "moduleId": {
-    "groupId": "Chirp.feature.chat",
-    "moduleId": "domain"
-  }
-}
