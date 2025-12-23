@@ -4,7 +4,6 @@ import ChirpAdaptiveFormLayout
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -31,17 +30,26 @@ import com.grpitsolutions.core.designsystem.components.layouts.ChirpSnackbarScaf
 import com.grpitsolutions.core.designsystem.components.textfields.ChirpPasswordTextField
 import com.grpitsolutions.core.designsystem.components.textfields.ChirpTextField
 import com.grpitsolutions.core.designsystem.theme.ChirpTheme
+import com.grpitsolutions.core.presentation.util.ObserveAsEvents
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun RegisterRoot(
-    viewModel: RegisterViewModel = viewModel()
+    viewModel: RegisterViewModel = viewModel(),
+    onRegisterSuccess: (String) -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-
     val snackbarHostState = remember { SnackbarHostState() }
+
+    ObserveAsEvents(viewModel.events) { event ->
+        when(event) {
+            is RegisterEvent.Success -> {
+                onRegisterSuccess(event.email)
+            }
+        }
+    }
+
     RegisterScreen(
         state = state,
         onAction = viewModel::onAction,
@@ -105,17 +113,23 @@ fun RegisterScreen(
 
             ChirpButton(
                 text = stringResource(Res.string.register),
-                onClick = { onAction(RegisterAction.OnRegisterClick) },
+                onClick = {
+                    onAction(RegisterAction.OnRegisterClick)
+                },
                 enabled = state.canRegister,
                 isLoading = state.isRegistering,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
             )
             Spacer(modifier = Modifier.height(8.dp))
             ChirpButton(
                 text = stringResource(Res.string.login),
-                onClick = { onAction(RegisterAction.OnLoginClick) },
+                onClick = {
+                    onAction(RegisterAction.OnLoginClick)
+                },
                 style = ChirpButtonStyle.SECONDARY,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
             )
         }
     }

@@ -81,7 +81,9 @@
           "org.jetbrains.androidx.core:core-bundle",
           "org.jetbrains.androidx.navigation:navigation-compose",
           "Chirp.core:domain",
-          "Chirp.feature.auth:domain"
+          "Chirp.feature.auth:domain",
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
         "sourceSetCInteropMetadataDirectory": "appleMain-cinterop",
         "binaryLayout": "klib",
@@ -111,7 +113,9 @@
           "org.jetbrains.androidx.navigation:navigation-compose",
           "org.jetbrains.kotlin:kotlin-stdlib",
           "Chirp.core:domain",
-          "Chirp.feature.auth:domain"
+          "Chirp.feature.auth:domain",
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
         "binaryLayout": "klib"
       },
@@ -140,7 +144,9 @@
           "org.jetbrains.androidx.core:core-bundle",
           "org.jetbrains.androidx.navigation:navigation-compose",
           "Chirp.core:domain",
-          "Chirp.feature.auth:domain"
+          "Chirp.feature.auth:domain",
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
         "sourceSetCInteropMetadataDirectory": "iosMain-cinterop",
         "binaryLayout": "klib",
@@ -171,7 +177,9 @@
           "org.jetbrains.androidx.core:core-bundle",
           "org.jetbrains.androidx.navigation:navigation-compose",
           "Chirp.core:domain",
-          "Chirp.feature.auth:domain"
+          "Chirp.feature.auth:domain",
+          "org.jetbrains.compose.components:components-resources",
+          "org.jetbrains.compose.components:components-ui-tooling-preview"
         ],
         "sourceSetCInteropMetadataDirectory": "nativeMain-cinterop",
         "binaryLayout": "klib",
