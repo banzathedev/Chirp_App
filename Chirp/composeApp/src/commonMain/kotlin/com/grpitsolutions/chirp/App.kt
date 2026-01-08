@@ -19,14 +19,15 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import chirp.composeapp.generated.resources.Res
 import chirp.composeapp.generated.resources.compose_multiplatform
 import com.grpitsolutions.auth.presentation.register.RegisterRoot
+import com.grpitsolutions.auth.presentation.register_success.RegisterSuccessRoot
 import com.grpitsolutions.core.designsystem.theme.ChirpTheme
 
 @Composable
 @Preview
 fun App() {
     ChirpTheme {
-        RegisterRoot(
-            onRegisterSuccess = {}
+        RegisterSuccessRoot(
+
         )
     }
 }
