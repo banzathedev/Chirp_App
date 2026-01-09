@@ -17,7 +17,7 @@ import com.grpitsolutions.core.designsystem.components.brand.ChirpSuccessIcon
 import com.grpitsolutions.core.designsystem.components.buttons.ChirpButton
 import com.grpitsolutions.core.designsystem.components.buttons.ChirpButtonStyle
 import com.grpitsolutions.core.designsystem.components.layouts.ChirpAdaptiveResultLayout
-import com.grpitsolutions.core.designsystem.components.layouts.ChirpSimpleSuccessLayout
+import com.grpitsolutions.core.designsystem.components.layouts.ChirpSimpleResultLayout
 import com.grpitsolutions.core.designsystem.components.layouts.ChirpSnackbarScaffold
 import com.grpitsolutions.core.designsystem.theme.ChirpTheme
 import com.grpitsolutions.core.presentation.util.ObserveAsEvents
@@ -61,7 +61,7 @@ fun RegisterSuccessScreen(
         snackbarHostState = snackbarHostState
     ) {
         ChirpAdaptiveResultLayout {
-            ChirpSimpleSuccessLayout(
+            ChirpSimpleResultLayout(
                 title = stringResource(Res.string.account_successfully_created),
                 description = stringResource(
                     Res.string.verification_email_sent_to_x,
