@@ -18,6 +18,7 @@ import com.grpitsolutions.core.designsystem.components.buttons.ChirpButton
 import com.grpitsolutions.core.designsystem.components.buttons.ChirpButtonStyle
 import com.grpitsolutions.core.designsystem.components.layouts.ChirpAdaptiveResultLayout
 import com.grpitsolutions.core.designsystem.components.layouts.ChirpSimpleSuccessLayout
+import com.grpitsolutions.core.designsystem.components.layouts.ChirpSnackbarScaffold
 import com.grpitsolutions.core.designsystem.theme.ChirpTheme
 import com.grpitsolutions.core.presentation.util.ObserveAsEvents
 import org.jetbrains.compose.resources.getString
@@ -31,21 +32,22 @@ fun RegisterSuccessRoot(
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
-    val snackbarHostState = remember{ SnackbarHostState() }
+    val snackbarHostState = remember { SnackbarHostState() }
 
     ObserveAsEvents(viewModel.events) { event ->
-        when(event){
-         is RegisterSuccessEvent.ResendVerificationEmailSuccess ->  {
-             snackbarHostState.showSnackbar(
-                 message = getString(Res.string.verification_email_resent)
-             )
-         }
+        when (event) {
+            is RegisterSuccessEvent.ResendVerificationEmailSuccess -> {
+                snackbarHostState.showSnackbar(
+                    message = getString(Res.string.verification_email_resent)
+                )
+            }
         }
     }
 
     RegisterSuccessScreen(
         state = state,
-        onAction = viewModel::onAction
+        onAction = viewModel::onAction,
+        snackbarHostState = snackbarHostState
     )
 }
 
@@ -53,37 +55,45 @@ fun RegisterSuccessRoot(
 fun RegisterSuccessScreen(
     state: RegisterSuccessState,
     onAction: (RegisterSuccessAction) -> Unit,
+    snackbarHostState: SnackbarHostState
 ) {
-    ChirpAdaptiveResultLayout {
-        ChirpSimpleSuccessLayout(
-            title = stringResource(Res.string.account_successfully_created),
-            description = stringResource(Res.string.verification_email_sent_to_x, state.registeredEmail),
-            icon = {
-                ChirpSuccessIcon()
-            },
-            primaryButton = {
-                ChirpButton(
-                    text = stringResource(Res.string.login),
-                    onClick = {
-                        onAction(RegisterSuccessAction.onLoginClick)
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                )
-            },
-            secondaryButton = {
-                ChirpButton(
-                    text = stringResource(Res.string.resend_verification_email),
-                    onClick = {
-                        onAction(RegisterSuccessAction.onResendVerificationEmailClick)
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                    enabled = !state.isResendingVerificationEmail,
-                    isLoading = state.isResendingVerificationEmail,
-                    style = ChirpButtonStyle.SECONDARY
-                )
-            },
-            secondaryError = state.resendVerificationError?.asString()
-        )
+    ChirpSnackbarScaffold(
+        snackbarHostState = snackbarHostState
+    ) {
+        ChirpAdaptiveResultLayout {
+            ChirpSimpleSuccessLayout(
+                title = stringResource(Res.string.account_successfully_created),
+                description = stringResource(
+                    Res.string.verification_email_sent_to_x,
+                    state.registeredEmail
+                ),
+                icon = {
+                    ChirpSuccessIcon()
+                },
+                primaryButton = {
+                    ChirpButton(
+                        text = stringResource(Res.string.login),
+                        onClick = {
+                            onAction(RegisterSuccessAction.onLoginClick)
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                },
+                secondaryButton = {
+                    ChirpButton(
+                        text = stringResource(Res.string.resend_verification_email),
+                        onClick = {
+                            onAction(RegisterSuccessAction.onResendVerificationEmailClick)
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        enabled = !state.isResendingVerificationEmail,
+                        isLoading = state.isResendingVerificationEmail,
+                        style = ChirpButtonStyle.SECONDARY
+                    )
+                },
+                secondaryError = state.resendVerificationError?.asString()
+            )
+        }
     }
 }
 
@@ -95,7 +105,8 @@ private fun Preview() {
             state = RegisterSuccessState(
                 registeredEmail = "test@preview.com"
             ),
-            onAction = {}
+            onAction = {},
+            snackbarHostState = remember{ SnackbarHostState() }
         )
     }
 }
