@@ -1,5 +1,6 @@
 package com.grpitsolutions.core.data.auth
 
+import com.grpitsolutions.core.data.dto.request.EmailRequest
 import com.grpitsolutions.core.data.dto.request.RegisterRequest
 import com.grpitsolutions.core.data.networking.post
 import com.grpitsolutions.core.domain.auth.AuthService
@@ -22,6 +23,13 @@ class KtorAuthService(
                 password = password,
                 username = username
             )
+        )
+    }
+
+    override suspend fun resendVerificationEmail(email: String): EmptyResult<DataError.Remote> {
+        return httpClient.post(
+            route = "/auth/resend-verification",
+            body = EmailRequest(email)
         )
     }
 }

@@ -113,6 +113,7 @@ class RegisterViewModel(
                     _state.update { it.copy(
                         isRegistering = false,
                     ) }
+                    eventChannel.send(RegisterEvent.Success(email))
                 }
                 .onFailure { error ->
                     val registrationError = when(error) {
@@ -122,7 +123,6 @@ class RegisterViewModel(
                     _state.update { it.copy(
                         isRegistering = false,
                         registrationError = registrationError,
-
                     ) }
                 }
         }
