@@ -17,13 +17,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import chirp.feature.auth.presentation.generated.resources.Res
 import chirp.feature.auth.presentation.generated.resources.close
 import chirp.feature.auth.presentation.generated.resources.email_verified_failed
-import chirp.feature.auth.presentation.generated.resources.email_verified_failed_description
+import chirp.feature.auth.presentation.generated.resources.email_verified_failed_desc
 import chirp.feature.auth.presentation.generated.resources.email_verified_successfully
-import chirp.feature.auth.presentation.generated.resources.email_verified_successfully_description
+import chirp.feature.auth.presentation.generated.resources.email_verified_successfully_desc
 import chirp.feature.auth.presentation.generated.resources.login
 import chirp.feature.auth.presentation.generated.resources.verifying_account
 import com.grpitsolutions.core.designsystem.components.brand.ChirpFailureIcon
@@ -63,7 +62,7 @@ fun EmailVerificationScreen(
             state.isVerified -> {
                 ChirpSimpleResultLayout(
                     title = stringResource(Res.string.email_verified_successfully),
-                    description = stringResource(Res.string.email_verified_successfully_description),
+                    description = stringResource(Res.string.email_verified_successfully_desc),
                     icon = {
                         ChirpSuccessIcon()
                     },
@@ -80,7 +79,7 @@ fun EmailVerificationScreen(
             else -> {
                 ChirpSimpleResultLayout(
                     title = stringResource(Res.string.email_verified_failed),
-                    description = stringResource(Res.string.email_verified_failed_description),
+                    description = stringResource(Res.string.email_verified_failed_desc),
                     icon = {
                         Spacer(Modifier.height(32.dp))
                         ChirpFailureIcon(
