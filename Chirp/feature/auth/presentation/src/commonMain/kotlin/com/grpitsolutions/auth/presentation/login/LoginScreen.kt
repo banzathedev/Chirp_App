@@ -33,16 +33,27 @@ import com.grpitsolutions.core.designsystem.components.textfields.ChirpTextField
 import com.grpitsolutions.core.designsystem.theme.ChirpTheme
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun LoginRoot(
-    viewModel: LoginViewModel = viewModel()
+    viewModel: LoginViewModel = koinViewModel(),
+    onLoginSuccess: () -> Unit,
+    onForgotPasswordClick: () -> Unit,
+    onCreateAccountClick: () -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
     LoginScreen(
         state = state,
-        onAction = viewModel::onAction
+        onAction = {action ->
+            when(action){
+                LoginAction.OnForgotPasswordClick -> onForgotPasswordClick()
+                LoginAction.OnSignUpClick -> onCreateAccountClick()
+                else -> Unit
+            }
+            viewModel.onAction(action)
+        }
     )
 }
 
