@@ -1,9 +1,11 @@
 package com.grpitsolutions.core.data.di
 
+import com.grpitsolutions.core.data.auth.DataStoreSessionStorage
 import com.grpitsolutions.core.data.auth.KtorAuthService
 import com.grpitsolutions.core.data.logging.KermitLogger
 import com.grpitsolutions.core.data.networking.HttpClientFactory
 import com.grpitsolutions.core.domain.auth.AuthService
+import com.grpitsolutions.core.domain.auth.SessionStorage
 import com.grpitsolutions.core.domain.logging.ChirpLogger
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
@@ -19,4 +21,5 @@ val coreDataModule = module {
         HttpClientFactory(get()).create(get())
     }
     singleOf(::KtorAuthService) bind AuthService::class
+    singleOf(::DataStoreSessionStorage) bind SessionStorage::class
 }

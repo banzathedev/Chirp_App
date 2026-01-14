@@ -12,3 +12,13 @@ fun UserSerializable.toDomain(): User {
         profilePictureUrl = profilePictureUrl,
     )
 }
+
+fun User.toSerializable(): UserSerializable {
+    return UserSerializable(
+        id = id,
+        email = email,
+        username = username,
+        hasVerifiedEmail = hasVerifiedEmail,
+        profilePictureUrl = profilePictureUrl,
+    )
+}
