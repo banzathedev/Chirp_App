@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import chirp.feature.auth.presentation.generated.resources.Res
 import chirp.feature.auth.presentation.generated.resources.create_account
 import chirp.feature.auth.presentation.generated.resources.email
@@ -23,7 +22,6 @@ import chirp.feature.auth.presentation.generated.resources.email_placeholder
 import chirp.feature.auth.presentation.generated.resources.forgot_password
 import chirp.feature.auth.presentation.generated.resources.login
 import chirp.feature.auth.presentation.generated.resources.password
-import chirp.feature.auth.presentation.generated.resources.password_hint
 import chirp.feature.auth.presentation.generated.resources.welcome_back
 import com.grpitsolutions.core.designsystem.components.brand.ChirpBrandLogo
 import com.grpitsolutions.core.designsystem.components.buttons.ChirpButton
