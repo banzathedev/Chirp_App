@@ -1,6 +1,7 @@
 package com.grpitsolutions.auth.presentation.di
 
 import com.grpitsolutions.auth.presentation.email_verification.EmailVerificationViewModel
+import com.grpitsolutions.auth.presentation.forgot_password.ForgotPasswordViewModel
 import com.grpitsolutions.auth.presentation.login.LoginViewModel
 import com.grpitsolutions.auth.presentation.register.RegisterViewModel
 import com.grpitsolutions.auth.presentation.register_success.RegisterSuccessViewModel
@@ -12,4 +13,5 @@ val authPresentationModule = module {
     viewModelOf(::RegisterSuccessViewModel)
     viewModelOf(::EmailVerificationViewModel)
     viewModelOf(::LoginViewModel)
+    viewModelOf(::ForgotPasswordViewModel)
 }

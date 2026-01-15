@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
 import androidx.navigation.navigation
 import com.grpitsolutions.auth.presentation.email_verification.EmailVerificationRoot
+import com.grpitsolutions.auth.presentation.forgot_password.ForgotPasswordRoot
 import com.grpitsolutions.auth.presentation.login.LoginRoot
 import com.grpitsolutions.auth.presentation.register.RegisterRoot
 import com.grpitsolutions.auth.presentation.register_success.RegisterSuccessRoot
@@ -23,7 +24,7 @@ fun NavGraphBuilder.authGraph(
                 onForgotPasswordClick = {
                     navController.navigate(AuthGraphRoutes.ForgotPassword)
                 },
-                onCreateAccountClick ={
+                onCreateAccountClick = {
                     navController.navigate(AuthGraphRoutes.Register) {
                         restoreState = true
                         launchSingleTop = true
@@ -34,11 +35,11 @@ fun NavGraphBuilder.authGraph(
         composable<AuthGraphRoutes.Register> {
             RegisterRoot(
                 onRegisterSuccess = {
-                navController.navigate(AuthGraphRoutes.RegisterSuccess(it))
+                    navController.navigate(AuthGraphRoutes.RegisterSuccess(it))
                 },
                 onLoginClick = {
                     navController.navigate(AuthGraphRoutes.Login) {
-                        popUpTo(AuthGraphRoutes.Register){
+                        popUpTo(AuthGraphRoutes.Register) {
                             inclusive = true
                             saveState = true
                         }
@@ -51,7 +52,7 @@ fun NavGraphBuilder.authGraph(
         composable<AuthGraphRoutes.RegisterSuccess> {
             RegisterSuccessRoot(
                 onLoginClick = {
-                    navController.navigate(AuthGraphRoutes.Login){
+                    navController.navigate(AuthGraphRoutes.Login) {
                         popUpTo<AuthGraphRoutes.RegisterSuccess> {
                             inclusive = true
                         }
@@ -69,23 +70,26 @@ fun NavGraphBuilder.authGraph(
                     this.uriPattern = "chirp://chirp.pl-coding.com/api/auth/verify?token={token}"
                 }
             )
-        ){
+        ) {
             EmailVerificationRoot(
                 onLoginClick = {
-                    navController.navigate(AuthGraphRoutes.Login){
+                    navController.navigate(AuthGraphRoutes.Login) {
                         popUpTo<AuthGraphRoutes.EmailVerification> {
                             inclusive = true
                         }
                     }
                 },
                 onCloseClick = {
-                    navController.navigate(AuthGraphRoutes.Login){
+                    navController.navigate(AuthGraphRoutes.Login) {
                         popUpTo<AuthGraphRoutes.EmailVerification> {
                             inclusive = true
                         }
                     }
                 }
             )
+        }
+        composable<AuthGraphRoutes.ForgotPassword> {
+            ForgotPasswordRoot()
         }
     }
 }
