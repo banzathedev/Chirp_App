@@ -1,0 +1,9 @@
+package com.grpitsolutions.core.data.dto.request
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class ResetPassword(
+    val newPassword: String,
+    val token: String
+)

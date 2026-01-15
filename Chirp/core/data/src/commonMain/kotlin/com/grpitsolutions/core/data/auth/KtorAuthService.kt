@@ -4,6 +4,7 @@ import com.grpitsolutions.core.data.dto.AuthInfoSerializable
 import com.grpitsolutions.core.data.dto.request.EmailRequest
 import com.grpitsolutions.core.data.dto.request.LoginRequest
 import com.grpitsolutions.core.data.dto.request.RegisterRequest
+import com.grpitsolutions.core.data.dto.request.ResetPassword
 import com.grpitsolutions.core.data.mappers.toDomain
 import com.grpitsolutions.core.data.networking.get
 import com.grpitsolutions.core.data.networking.post
@@ -66,6 +67,19 @@ class KtorAuthService(
         return httpClient.post(
             route = "/auth/forgot-password",
             body = EmailRequest(email)
+        )
+    }
+
+    override suspend fun resetPassword(
+        newPassword: String,
+        token: String
+    ): EmptyResult<DataError.Remote> {
+        return httpClient.post(
+            route = "/auth/reset-password",
+            body = ResetPassword(
+                newPassword = newPassword,
+                token = token
+            )
         )
     }
 }
