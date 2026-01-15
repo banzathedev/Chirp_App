@@ -71,6 +71,7 @@ fun RegisterScreen(
     onAction: (RegisterAction) -> Unit,
     snackbarHostState: SnackbarHostState
 ) {
+
     ChirpSnackbarScaffold(
         snackbarHostState = snackbarHostState
     ) {

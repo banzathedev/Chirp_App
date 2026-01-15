@@ -21,6 +21,7 @@ import chirp.feature.auth.presentation.generated.resources.set_new_password
 import chirp.feature.auth.presentation.generated.resources.submit
 import com.grpitsolutions.core.designsystem.components.brand.ChirpBrandLogo
 import com.grpitsolutions.core.designsystem.components.buttons.ChirpButton
+import com.grpitsolutions.core.designsystem.components.layouts.ChirpSnackbarScaffold
 import com.grpitsolutions.core.designsystem.components.textfields.ChirpPasswordTextField
 import com.grpitsolutions.core.designsystem.theme.ChirpTheme
 import com.grpitsolutions.core.designsystem.theme.extended
@@ -45,42 +46,44 @@ fun ResetPasswordScreen(
     state: ResetPasswordState,
     onAction: (ResetPasswordAction) -> Unit,
 ) {
-    ChirpAdaptiveFormLayout(
-        headerText = stringResource(Res.string.set_new_password),
-        errorText = state.errorText?.asString(),
-        logo = { ChirpBrandLogo() }
-    ) {
-        ChirpPasswordTextField(
-            state = state.passwordTextState,
-            modifier = Modifier
-                .fillMaxWidth(),
-            placeholder = stringResource(Res.string.password),
-            supportingText = stringResource(Res.string.password_hint),
-            title = stringResource(Res.string.new_password),
-            isPasswordVisible = state.isPasswordVisible,
-            onToggleVisibilityClick = {
-                onAction(ResetPasswordAction.OnTogglePasswordVisibilityClick)
-            }
-        )
-        Spacer(Modifier.height(16.dp))
-        ChirpButton(
-            text = stringResource(Res.string.submit),
-            onClick = {
-                onAction(ResetPasswordAction.OnSubmitClick)
-            },
-            modifier = Modifier.fillMaxWidth(),
-            enabled = !state.isLoading && state.canSubmit,
-            isLoading = state.isLoading
-        )
-        if (state.isResetSuccessFull) {
-            Spacer(Modifier.height(8.dp))
-            Text(
-                text = stringResource(Res.string.reset_password_successfully),
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.extended.success,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+    ChirpSnackbarScaffold {
+        ChirpAdaptiveFormLayout(
+            headerText = stringResource(Res.string.set_new_password),
+            errorText = state.errorText?.asString(),
+            logo = { ChirpBrandLogo() }
+        ) {
+            ChirpPasswordTextField(
+                state = state.passwordTextState,
+                modifier = Modifier
+                    .fillMaxWidth(),
+                placeholder = stringResource(Res.string.password),
+                supportingText = stringResource(Res.string.password_hint),
+                title = stringResource(Res.string.new_password),
+                isPasswordVisible = state.isPasswordVisible,
+                onToggleVisibilityClick = {
+                    onAction(ResetPasswordAction.OnTogglePasswordVisibilityClick)
+                }
             )
+            Spacer(Modifier.height(16.dp))
+            ChirpButton(
+                text = stringResource(Res.string.submit),
+                onClick = {
+                    onAction(ResetPasswordAction.OnSubmitClick)
+                },
+                modifier = Modifier.fillMaxWidth(),
+                enabled = !state.isLoading && state.canSubmit,
+                isLoading = state.isLoading
+            )
+            if (state.isResetSuccessFull) {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    text = stringResource(Res.string.reset_password_successfully),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.extended.success,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
         }
     }
 }
