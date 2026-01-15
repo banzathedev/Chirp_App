@@ -9,11 +9,5 @@ import kotlinx.coroutines.launch
 class ChatListViewModel(
     private val  sessionStorage: SessionStorage
 ): ViewModel() {
-
-    init {
-        viewModelScope.launch {
-            delay(5000)
-            sessionStorage.set(null)
-        }
-    }
+    
 }
