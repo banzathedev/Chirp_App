@@ -31,6 +31,7 @@ import com.grpitsolutions.core.designsystem.components.layouts.ChirpSurface
 import com.grpitsolutions.core.designsystem.theme.ChirpTheme
 import com.grpitsolutions.core.designsystem.theme.extended
 import com.grpitsolutions.core.presentation.util.DeviceConfiguration
+import com.grpitsolutions.core.presentation.util.clearFocusOnTap
 import com.grpitsolutions.core.presentation.util.currentDeviceConfiguration
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -53,6 +54,7 @@ fun ChirpAdaptiveFormLayout(
         DeviceConfiguration.MOBILE_PORTRAIT -> {
             ChirpSurface(
                 modifier = modifier
+                    .clearFocusOnTap()
                     .consumeWindowInsets(WindowInsets.navigationBars)
                     .consumeWindowInsets(WindowInsets.displayCutout),
                 header = {
