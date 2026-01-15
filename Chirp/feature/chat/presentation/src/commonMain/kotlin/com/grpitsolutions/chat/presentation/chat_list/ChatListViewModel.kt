@@ -9,5 +9,5 @@ import kotlinx.coroutines.launch
 class ChatListViewModel(
     private val  sessionStorage: SessionStorage
 ): ViewModel() {
-    
+
 }
