@@ -21,7 +21,7 @@ fun ChirpBottomSheet(
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true
     )
-    
+
     LaunchedEffect(sheetState.isVisible) {
         if (sheetState.isVisible) {
             sheetState.expand()
