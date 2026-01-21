@@ -11,7 +11,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ChirpStackedAvatars(
-    avatars: List<AvatarUI>,
+    avatars: List<ChatParticipantUi>,
     modifier: Modifier = Modifier,
     size: AvatarSize = AvatarSize.SMALL,
     maxVisible: Int = 2,
@@ -50,17 +50,17 @@ fun ChirpStackedAvatarsPreview() {
     ChirpTheme {
         ChirpStackedAvatars(
             avatars = listOf(
-                AvatarUI(
+                ChatParticipantUi(
                     id = "1",
                     username = "banza",
                     initials = "bz"
                 ),
-                AvatarUI(
+                ChatParticipantUi(
                     id = "2",
                     username = "michelle",
                     initials = "mi"
                 ),
-                AvatarUI(
+                ChatParticipantUi(
                     id = "3",
                     username = "blucas",
                     initials = "lv"

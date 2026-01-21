@@ -7,10 +7,10 @@ import com.grpitsolutions.core.presentation.util.currentDeviceConfiguration
 @Composable
 fun ChirpAdaptiveDialogSheetLayout(
     onDismiss: () -> Unit,
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
     val configuration = currentDeviceConfiguration()
-    if (configuration.isMobile) {
+    if(configuration.isMobile) {
         ChirpBottomSheet(
             onDismiss = onDismiss,
             content = content

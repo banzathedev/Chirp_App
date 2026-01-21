@@ -14,27 +14,25 @@ import androidx.compose.ui.Modifier
 @Composable
 fun ChirpBottomSheet(
     onDismiss: () -> Unit,
-    content: @Composable () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit
 ) {
-
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true
     )
-
     LaunchedEffect(sheetState.isVisible) {
-        if (sheetState.isVisible) {
+        if(sheetState.isVisible) {
             sheetState.expand()
         }
     }
 
     ModalBottomSheet(
-        onDismissRequest = { onDismiss() },
+        onDismissRequest = onDismiss,
+        sheetState = sheetState,
         dragHandle = null,
         contentWindowInsets = { WindowInsets() },
-        modifier = modifier.statusBarsPadding()
+        modifier = modifier.statusBarsPadding(),
     ) {
         content()
     }
-
 }
