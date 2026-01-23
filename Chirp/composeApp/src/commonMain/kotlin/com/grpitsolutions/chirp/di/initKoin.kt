@@ -1,6 +1,7 @@
 package com.grpitsolutions.chirp.di
 
 import com.grpitsolutions.auth.presentation.di.authPresentationModule
+import com.grpitsolutions.chat.data.di.chatDataModule
 import com.grpitsolutions.chat.presentation.di.chatPresentationModule
 import com.grpitsolutions.core.data.di.coreDataModule
 import com.grpitsolutions.core.presentation.di.corePresentationModule
@@ -11,11 +12,12 @@ fun initKoin(config: KoinAppDeclaration? = null){
     startKoin {
         config?.invoke(this)
         modules(
-            coreDataModule,
-            authPresentationModule,
             appModule,
+            coreDataModule,
+            corePresentationModule,
+            authPresentationModule,
             chatPresentationModule,
-            corePresentationModule
+            chatDataModule
         )
     }
 }
