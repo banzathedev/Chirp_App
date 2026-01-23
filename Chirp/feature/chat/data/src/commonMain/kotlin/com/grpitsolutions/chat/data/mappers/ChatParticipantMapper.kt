@@ -1,6 +1,6 @@
 package com.grpitsolutions.chat.data.mappers
 
-import com.grpitsolutions.chat.data.dto.ChatParticipantDTO
+import com.grpitsolutions.chat.data.dto.response.ChatParticipantDTO
 import com.grpitsolutions.chat.domain.models.ChatParticipant
 
 fun ChatParticipantDTO.toDomain(): ChatParticipant{
