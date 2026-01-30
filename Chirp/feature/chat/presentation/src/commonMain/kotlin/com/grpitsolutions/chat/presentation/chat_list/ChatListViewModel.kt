@@ -27,7 +27,7 @@ class ChatListViewModel : ViewModel() {
 
     fun onAction(action: ChatListAction) {
         when (action) {
-            else -> TODO("Handle actions")
+            else -> Unit
         }
     }
 
