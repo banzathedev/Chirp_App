@@ -31,7 +31,7 @@ fun ChirpAvatarPhoto(
     modifier: Modifier = Modifier,
     size: AvatarSize = AvatarSize.SMALL,
     imageUrl: String? = null,
-    onclick: (() -> Unit)? = null,
+    onClick: (() -> Unit)? = null,
     textColor: Color = MaterialTheme.colorScheme.extended.textPlaceholder
 ) {
     Box(
@@ -39,8 +39,8 @@ fun ChirpAvatarPhoto(
             .size(size.dp)
             .clip(CircleShape)
             .clickable(
-                onClick = { onclick?.invoke() },
-                enabled = onclick != null
+                onClick = { onClick?.invoke() },
+                enabled = onClick != null
             )
             .background(MaterialTheme.colorScheme.extended.secondaryFill)
             .border(

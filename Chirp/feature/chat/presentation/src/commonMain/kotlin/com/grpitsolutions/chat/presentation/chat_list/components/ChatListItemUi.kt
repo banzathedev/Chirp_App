@@ -140,7 +140,7 @@ fun ChatListItemUI(
 
 @Composable
 @Preview
-private fun chatListItemUILightModePreview() {
+private fun ChatListItemUILightModePreview() {
     ChirpTheme {
         ChatListItemUI(
             isSelected = true,
@@ -178,7 +178,7 @@ private fun chatListItemUILightModePreview() {
 
 @Composable
 @Preview
-private fun chatListItemUIDarkThemePreview() {
+private fun ChatListItemUIDarkThemePreview() {
     ChirpTheme(darkTheme = true) {
         ChatListItemUI(
             isSelected = true,
@@ -216,7 +216,7 @@ private fun chatListItemUIDarkThemePreview() {
 
 @Composable
 @Preview
-private fun chatListItemUIDarkThemeNotSelectedOneParticipantPreview() {
+private fun ChatListItemUIDarkThemeNotSelectedOneParticipantPreview() {
     ChirpTheme(darkTheme = true) {
         ChatListItemUI(
             isSelected = false,
