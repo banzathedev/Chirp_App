@@ -6,6 +6,7 @@ sealed interface ChatListAction {
     data object OnLogoutClick: ChatListAction
     data object OnConfirmLogout: ChatListAction
     data object OnDismissLogoutDialog: ChatListAction
+    data object OnCreateChatClick: ChatListAction
     data class OnChatClick(
         val chatId: String
     ): ChatListAction
