@@ -46,7 +46,7 @@ fun ChirpStackedAvatars(
 
 @Composable
 @Preview
-fun ChirpStackedAvatarsPreview() {
+private fun ChirpStackedAvatarsPreview() {
     ChirpTheme {
         ChirpStackedAvatars(
             avatars = listOf(
